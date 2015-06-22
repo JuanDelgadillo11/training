@@ -1,20 +1,32 @@
 /*
 * Author: Juan Delgadillo
-* Task1: Create function to sum, max,min and avg
+* This file contains all the task of REST API course, bellow you can find by order the task
+* List of tasks:
+* Task2: Create function to sum, max,min and avg
+* Task3: Create a calculator that integrates task2 and add new functionality
+ * Memory
+ * Sum
+ * Substract
+ * Multiply
+ * Divide
 * */
 
-
 var calculateAll = function(){
-    console.log('SUMA: ', sum1(arguments));
+    console.log('The result of the sum is: ', sum1(arguments));
 	document.getElementById("p1").innerHTML="Result:"+sum1(arguments);
-	console.log('MAX: ', mayor(arguments));
+	console.log('The maximun number is: ', major(arguments));
 	document.getElementById("p2").innerHTML="Result:"+mayor(arguments);
-	console.log('MIN: ', menor(arguments));
-	document.getElementById("p3").innerHTML="Result:"+menor(arguments);
-	console.log('Average: ', avg(arguments));
+	console.log('The minimum number is: ', menor(arguments));
+	document.getElementById("p3").innerHTML="Result:"+minor(arguments);
+	console.log('The Average is: ', avg(arguments));
 	document.getElementById("p4").innerHTML="Result:"+avg(arguments);
 }
-
+/**
+ *
+ * @param numbers
+ * @param pos
+ * @returns sum of numbers
+ */
 var sum = function(numbers, pos){
 
     if (!pos)
@@ -38,8 +50,13 @@ var resultado=0;
     return resultado = numbers[pos] + sum(numbers, pos + 1)
 	
 };
-
-var mayor = function(numbers, pos){
+/**
+ *
+ * @param numbers
+ * @param pos
+ * @returns The major number received
+ */
+var major = function(numbers, pos){
 	
 var resultado=0;
     if (!pos)
@@ -60,10 +77,16 @@ var resultado=0;
 				
 	}
 	
-	return mayor(numbers,pos+1)
+	return major(numbers,pos+1)
   }
 };
-var menor = function(numbers, pos){
+/**
+ *
+ * @param numbers
+ * @param pos
+ * @returns The minor number of the received values
+ */
+var minor = function(numbers, pos){
 	
 var resultado=0;
     if (!pos)
@@ -86,10 +109,15 @@ var resultado=0;
 		
 	}
 	
-	return menor(numbers,pos+1)
+	return minor(numbers,pos+1)
   }
 };
-
+/**
+ *
+ * @param numbers
+ * @param pos
+ * @returns The average of all the received numbers
+ */
 var avg = function(numbers, pos){
 var resultado=0;
 var promedio=0;
@@ -114,7 +142,7 @@ var promedio=0;
 * Task 3
 * This class contains functions for sum, Max, min, avg, add, subtract, multiply and divide
  */
-calculadora1= {
+Calculadora= {
 	memory:0,
 
 	delMemory:function()
